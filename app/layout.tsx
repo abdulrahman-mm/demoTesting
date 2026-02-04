@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './layouts/Header';
+import Footer from './layouts/Footer';
 
 export const metadata: Metadata = {
   title: 'CodeMasters Institute | Python, DevOps & React Training',

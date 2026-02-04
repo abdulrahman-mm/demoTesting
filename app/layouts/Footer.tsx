@@ -7,17 +7,14 @@ const Footer = () => {
     { label: 'Courses', href: '#courses' },
     { label: 'About Us', href: '/about' },
     { label: 'Contact', href: '#contact' },
-    { label: 'Careers', href: '/careers' },
-    { label: 'Blog', href: '/blog' },
+    
   ];
 
   const courses = [
     { label: 'Python Development', href: '/courses/python' },
     { label: 'DevOps Engineering', href: '/courses/devops' },
     { label: 'React Development', href: '/courses/react' },
-    { label: 'Data Science', href: '/courses/data-science' },
-    { label: 'Cloud Computing', href: '/courses/cloud' },
-    { label: 'Mobile Development', href: '/courses/mobile' },
+  
   ];
 
   return (
@@ -122,7 +119,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} CodeMasters Institute. All rights reserved. | 
+            © {new Date().getFullYear()} Vira Academy. All rights reserved. | 
             <Link href="/privacy" className="hover:text-primary ml-2">Privacy Policy</Link> | 
             <Link href="/terms" className="hover:text-primary ml-2">Terms of Service</Link>
           </p>

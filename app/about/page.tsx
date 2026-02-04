@@ -1,112 +1,205 @@
-import { Users, Target, Award, Globe, Clock, BookOpen } from 'lucide-react';
+import { Users, Target, Award, Globe, Sparkles, TrendingUp, CheckCircle, ArrowRight, ChevronRight, Zap, Rocket } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AboutPage() {
   const values = [
     {
-      icon: <Target className="w-8 h-8" />,
+      icon: <Target className="w-6 h-6" />,
       title: 'Mission',
-      description: 'To empower individuals with practical tech skills that transform careers and drive innovation.',
-      color: 'bg-orange-100 text-[#FF7A1E]'
+      description: 'Empowering individuals with cutting-edge tech skills that transform careers and drive innovation.',
+      color: 'from-orange-500 to-orange-600'
     },
     {
-      icon: <Award className="w-8 h-8" />,
+      icon: <Award className="w-6 h-6" />,
       title: 'Excellence',
-      description: 'Commitment to delivering industry-leading education with the highest quality standards.',
-      color: 'bg-orange-100 text-[#FF7A1E]'
+      description: 'Industry-leading education with uncompromising quality standards.',
+      color: 'from-orange-500 to-orange-600'
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-6 h-6" />,
       title: 'Community',
-      description: 'Building a supportive network of learners, mentors, and industry professionals.',
-      color: 'bg-orange-100 text-[#FF7A1E]'
+      description: 'Global network of learners, mentors, and industry leaders.',
+      color: 'from-orange-500 to-orange-600'
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: <Globe className="w-6 h-6" />,
       title: 'Innovation',
-      description: 'Continuously updating curriculum to match evolving industry trends and technologies.',
-      color: 'bg-orange-100 text-[#FF7A1E]'
+      description: 'Continuous curriculum evolution matching industry trends.',
+      color: 'from-orange-500 to-orange-600'
     }
   ];
 
   const milestones = [
-    { year: '2020', title: 'Founded', description: 'Started with Python programming courses' },
-    { year: '2021', title: 'Expansion', description: 'Added DevOps and React development programs' },
-    { year: '2022', title: 'Growth', description: 'Trained 1000+ students across India' },
-    { year: '2023', title: 'Recognition', description: 'Awarded "Best Tech Institute 2023"' },
-    { year: '2024', title: 'Global Reach', description: 'Started online international batches' }
+    { year: '2020', title: 'Founded', description: 'Launched with Python courses', highlight: true },
+    { year: '2021', title: 'Expansion', description: 'Added DevOps & React programs' },
+    { year: '2022', title: 'Growth', description: '1000+ students trained globally' },
+    { year: '2023', title: 'Recognition', description: 'Awarded "Best Tech Institute"' },
+    { year: '2024', title: 'Global', description: 'International online batches launched', highlight: true }
+  ];
+
+  const stats = [
+    { value: '5000+', label: 'Students Trained', icon: <TrendingUp className="w-5 h-5" />, change: '+42% YoY' },
+    { value: '98%', label: 'Placement Rate', icon: <CheckCircle className="w-5 h-5" />, change: 'Industry leading' },
+    { value: '1200+', label: 'Projects', icon: <Sparkles className="w-5 h-5" />, change: 'Real-world impact' },
+    { value: '50+', label: 'Expert Trainers', icon: <Users className="w-5 h-5" />, change: 'Industry veterans' }
+  ];
+
+  const leadership = [
+    {
+      initials: 'AK',
+      name: 'Arjun Kapoor',
+      role: 'Founder & CEO',
+      bio: 'Ex-Google, 15+ years in software development',
+      expertise: ['Tech Strategy', 'Scalability']
+    },
+    {
+      initials: 'PS',
+      name: 'Priya Sharma',
+      role: 'Head of Training',
+      bio: 'Ex-Amazon, DevOps Specialist',
+      expertise: ['Cloud Architecture', 'DevOps']
+    },
+    {
+      initials: 'RV',
+      name: 'Rahul Verma',
+      role: 'Lead Instructor',
+      bio: 'Full Stack Developer, React Expert',
+      expertise: ['React', 'Full Stack']
+    }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-orange-50 via-white to-orange-50">
-        <div className="section-padding">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              About <span className="text-[#FF7A1E]">CodeMasters</span>
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-50" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-orange-100 to-transparent rounded-full blur-3xl opacity-60" />
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-orange-50 to-transparent rounded-full blur-3xl opacity-50" />
+        
+        <div className="section-padding relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-200 rounded-full px-4 py-2 mb-6">
+              <Sparkles className="w-4 h-4 text-orange-500" />
+              <span className="text-sm font-semibold text-orange-600">Premium Tech Education</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight">
+              About <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Vira Academy</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
-              We are a premier software training institute dedicated to bridging the gap between 
-              academic knowledge and industry requirements through practical, hands-on learning.
+            
+            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+              We're redefining tech education through immersive, industry-aligned programs that bridge 
+              the gap between theoretical knowledge and real-world application.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn">
-                Join Our Community
+              <Link 
+                href="/contact" 
+                className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105"
+              >
+                Start Learning Journey
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="#courses" className="btn-secondary">
-                View Courses
+              <Link 
+                href="/courses" 
+                className="inline-flex items-center justify-center gap-3 bg-white border border-gray-200 text-gray-700 font-semibold px-8 py-4 rounded-xl hover:border-orange-300 hover:shadow-lg transition-all duration-300"
+              >
+                Explore Programs
+                <ChevronRight className="w-5 h-5" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Grid */}
+      <section className="py-16 bg-white">
+        <div className="section-padding">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {stats.map((stat, index) => (
+              <div 
+                key={index} 
+                className="group relative bg-white border border-gray-100 rounded-2xl p-6 hover:border-orange-200 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-orange-50 rounded-lg">
+                    <div className="text-orange-500">{stat.icon}</div>
+                  </div>
+                  <div className="text-3xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                    {stat.value}
+                  </div>
+                </div>
+                <div className="text-gray-700 font-medium mb-1">{stat.label}</div>
+                <div className="text-sm text-gray-500">{stat.change}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="section-padding">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our <span className="text-[#FF7A1E]">Story</span>
-              </h2>
-              <div className="space-y-4 text-gray-600">
-                <p>
-                  Founded in 2020 by a group of industry professionals, CodeMasters Institute was born 
-                  from a simple observation: there's a significant gap between what traditional education 
-                  provides and what the tech industry actually needs.
-                </p>
-                <p>
-                  We started with just one Python programming course, taught in a small classroom with 
-                  12 students. Today, we've grown into a comprehensive training institute offering 
-                  specialized programs in Python, DevOps, and React development.
-                </p>
-                <p>
-                  Our success lies in our commitment to practical, project-based learning. Every course 
-                  is designed with input from industry experts, ensuring our graduates are job-ready 
-                  from day one.
-                </p>
-              </div>
-            </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="relative">
-              <div className="bg-gradient-to-br from-[#FF7A1E] to-[#FF9A3E] rounded-2xl p-1">
-                <div className="bg-white rounded-xl p-8">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center p-6 bg-orange-50 rounded-lg">
-                      <div className="text-3xl font-bold text-[#FF7A1E] mb-2">5000+</div>
-                      <div className="text-gray-700">Students Trained</div>
+              <div className="inline-flex items-center gap-2 mb-6">
+                <div className="w-2 h-8 bg-gradient-to-b from-orange-500 to-orange-600 rounded-full" />
+                <span className="text-sm font-semibold text-orange-600 uppercase tracking-wider">Our Evolution</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-gray-900">
+                Redefining <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+                  Tech Education
+                </span>
+              </h2>
+              <div className="space-y-6 text-gray-600">
+                <p className="leading-relaxed">
+                  Founded in 2020 by industry veterans, Vira Academy emerged from a critical insight: 
+                  traditional education fails to equip students with practical, industry-relevant skills.
+                </p>
+                <p className="leading-relaxed">
+                  Starting with a single Python course in a modest classroom, we've evolved into a 
+                  comprehensive training ecosystem. Our growth is fueled by relentless focus on 
+                  project-based learning and continuous curriculum innovation.
+                </p>
+                <p className="leading-relaxed">
+                  Today, we stand as a beacon of excellence in tech education, preparing students 
+                  not just for jobs, but for impactful careers in technology.
+                </p>
+              </div>
+              <div className="mt-8">
+                <Link 
+                  href="/story" 
+                  className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all"
+                >
+                  Read our full story
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute -right-6 -top-6 w-32 h-32 bg-gradient-to-r from-orange-100 to-orange-50 rounded-full blur-3xl" />
+              <div className="relative bg-white border border-gray-200 rounded-3xl p-8 shadow-xl">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-6">
+                    <div className="bg-gradient-to-br from-white to-orange-50 border border-gray-100 rounded-2xl p-6 text-center hover:border-orange-300 hover:shadow-lg transition-all duration-300">
+                      <div className="text-3xl font-bold text-gray-900 mb-2">5000+</div>
+                      <div className="text-gray-600">Students Transformed</div>
                     </div>
-                    <div className="text-center p-6 bg-orange-50 rounded-lg">
-                      <div className="text-3xl font-bold text-[#FF7A1E] mb-2">50+</div>
-                      <div className="text-gray-700">Expert Trainers</div>
+                    <div className="bg-gradient-to-br from-white to-orange-50 border border-gray-100 rounded-2xl p-6 text-center hover:border-orange-300 hover:shadow-lg transition-all duration-300">
+                      <div className="text-3xl font-bold text-gray-900 mb-2">98%</div>
+                      <div className="text-gray-600">Success Rate</div>
                     </div>
-                    <div className="text-center p-6 bg-orange-50 rounded-lg">
-                      <div className="text-3xl font-bold text-[#FF7A1E] mb-2">98%</div>
-                      <div className="text-gray-700">Placement Rate</div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="bg-gradient-to-br from-white to-orange-50 border border-gray-100 rounded-2xl p-6 text-center hover:border-orange-300 hover:shadow-lg transition-all duration-300">
+                      <div className="text-3xl font-bold text-gray-900 mb-2">50+</div>
+                      <div className="text-gray-600">Industry Experts</div>
                     </div>
-                    <div className="text-center p-6 bg-orange-50 rounded-lg">
-                      <div className="text-3xl font-bold text-[#FF7A1E] mb-2">1200+</div>
-                      <div className="text-gray-700">Projects Completed</div>
+                    <div className="bg-gradient-to-br from-white to-orange-50 border border-gray-100 rounded-2xl p-6 text-center hover:border-orange-300 hover:shadow-lg transition-all duration-300">
+                      <div className="text-3xl font-bold text-gray-900 mb-2">1200+</div>
+                      <div className="text-gray-600">Real Projects</div>
                     </div>
                   </div>
                 </div>
@@ -116,131 +209,141 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-16 md:py-24 bg-orange-50/30">
+      {/* Core Values */}
+      <section className="py-24 bg-white">
         <div className="section-padding">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-[#FF7A1E]">Core Values</span>
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-200 rounded-full px-4 py-2 mb-4">
+              <span className="text-sm font-semibold text-orange-600">Our Principles</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gray-900">
+              Core <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+                Values
+              </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do at CodeMasters Institute
+            <p className="text-lg text-gray-600">
+              The foundation of everything we build at Vira Academy
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {values.map((value, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl border border-orange-100">
-                <div className={`w-14 h-14 rounded-xl ${value.color} flex items-center justify-center mb-6`}>
-                  {value.icon}
+              <div 
+                key={index} 
+                className="group relative bg-white border border-gray-100 rounded-2xl p-8 hover:border-orange-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-6 relative`}>
+                  <div className="text-white">{value.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-16 md:py-24 bg-white">
+      
+
+      {/* Leadership */}
+      <section className="py-24 bg-white">
         <div className="section-padding">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-[#FF7A1E]">Journey</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Key milestones in our growth and development
-            </p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-200 rounded-full px-4 py-2 mb-4">
+                <span className="text-sm font-semibold text-orange-600">Leadership</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gray-900">
+                Meet Our <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+                  Team
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Industry veterans leading the revolution in tech education
+              </p>
+            </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#FF7A1E] to-[#FF9A3E] hidden md:block"></div>
-
-            {milestones.map((milestone, index) => (
-              <div
-                key={index}
-                className={`relative mb-12 md:flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#FF7A1E] rounded-full border-4 border-white hidden md:block"></div>
-
-                {/* Content */}
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                  <div className="bg-white p-6 rounded-xl border border-orange-100 shadow-sm">
-                    <div className="text-2xl font-bold text-[#FF7A1E] mb-2">{milestone.year}</div>
-                    <h3 className="text-xl font-bold mb-2">{milestone.title}</h3>
-                    <p className="text-gray-600">{milestone.description}</p>
+            <div className="grid md:grid-cols-3 gap-8">
+              {leadership.map((person, index) => (
+                <div 
+                  key={index} 
+                  className="group relative bg-white border border-gray-100 rounded-2xl p-8 hover:border-orange-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="absolute -top-4 left-8">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-orange-500/30">
+                      {person.initials}
+                    </div>
+                  </div>
+                  <div className="pt-12">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{person.name}</h3>
+                    <p className="text-orange-600 font-semibold mb-4">{person.role}</p>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{person.bio}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {person.expertise.map((skill, i) => (
+                        <span key={i} className="px-3 py-1 bg-orange-50 text-orange-600 text-sm font-medium rounded-full">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-6 pt-6 border-t border-gray-100">
+                      <div className="flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 transition-colors cursor-pointer">
+                        <span>View profile</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Preview */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-orange-50 via-white to-orange-50">
-        <div className="section-padding">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Meet Our <span className="text-[#FF7A1E]">Leadership</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Industry veterans with decades of combined experience
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#FF7A1E] to-[#FF9A3E] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-4xl font-bold">
-                AK
-              </div>
-              <h3 className="text-xl font-bold mb-2">Arjun Kapoor</h3>
-              <p className="text-[#FF7A1E] font-medium mb-2">Founder & CEO</p>
-              <p className="text-gray-600 text-sm">Ex-Google, 15+ years in software development</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#FF7A1E] to-[#FF9A3E] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-4xl font-bold">
-                PS
-              </div>
-              <h3 className="text-xl font-bold mb-2">Priya Sharma</h3>
-              <p className="text-[#FF7A1E] font-medium mb-2">Head of Training</p>
-              <p className="text-gray-600 text-sm">Ex-Amazon, DevOps Specialist</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#FF7A1E] to-[#FF9A3E] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-4xl font-bold">
-                RV
-              </div>
-              <h3 className="text-xl font-bold mb-2">Rahul Verma</h3>
-              <p className="text-[#FF7A1E] font-medium mb-2">Lead Instructor</p>
-              <p className="text-gray-600 text-sm">Full Stack Developer, React Expert</p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-[#FF7A1E] to-[#FF9A3E] text-white">
-        <div className="section-padding text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Start Your Learning Journey?
-          </h2>
-          <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            Join thousands of successful students who chose CodeMasters for their tech education
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-white text-[#FF7A1E] btn hover:bg-orange-50">
-              Enroll Now
-            </Link>
-            <Link href="/contact" className="btn-secondary border-white text-white hover:bg-white/10">
-              Book Campus Tour
-            </Link>
+      <section className="relative py-24 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-50" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-orange-100 to-transparent rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-orange-100 to-transparent rounded-full blur-3xl opacity-50" />
+        
+        <div className="section-padding relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-200 rounded-full px-4 py-2 mb-6">
+              <Rocket className="w-4 h-4 text-orange-500" />
+              <span className="text-sm font-semibold text-orange-600">Ready to Transform?</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-gray-900">
+              Begin Your <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+                Tech Journey
+              </span> Today
+            </h2>
+            
+            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+              Join thousands who've accelerated their careers with Vira Academy's industry-leading programs.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-10 py-5 rounded-2xl hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105"
+              >
+                Enroll Now
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center gap-3 bg-white border border-gray-200 text-gray-700 font-semibold px-10 py-5 rounded-2xl hover:border-orange-300 hover:shadow-lg transition-all duration-300"
+              >
+                Schedule Consultation
+                <ChevronRight className="w-5 h-5" />
+              </Link>
+            </div>
+            
+            <p className="mt-6 text-sm text-gray-500">
+              Next batch starts in 2 weeks • Limited seats available
+            </p>
           </div>
         </div>
       </section>
