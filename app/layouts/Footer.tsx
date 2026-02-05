@@ -102,7 +102,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="mt-8 bg-gray-800 rounded-xl p-4">
+            {/* <div className="mt-8 bg-gray-800 rounded-xl p-4">
               <h4 className="font-bold mb-2">Newsletter</h4>
               <p className="text-sm text-gray-400 mb-3">Get updates on new courses and offers</p>
               <div className="flex gap-2">
@@ -113,7 +113,7 @@ const Footer = () => {
                 />
                 <button className="btn px-4 py-2">Subscribe</button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

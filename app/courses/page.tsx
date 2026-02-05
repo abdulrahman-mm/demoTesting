@@ -39,42 +39,7 @@ export default function CoursesPage() {
       features: ['React & Next.js', 'TypeScript', 'State Management', 'Testing', 'Performance', 'Deployment'],
       popular: false,
     },
-    {
-      id: 4,
-      title: 'Data Science with Python',
-      description: 'Learn data analysis, visualization, and machine learning algorithms.',
-      icon: <TrendingUp className="w-8 h-8" />,
-      duration: '14 Weeks',
-      level: 'Intermediate',
-      students: '750+',
-      fee: '₹50,000',
-      features: ['Pandas & NumPy', 'Data Visualization', 'Machine Learning', 'Deep Learning', 'Big Data', 'Projects'],
-      popular: false,
-    },
-    {
-      id: 5,
-      title: 'Cloud Computing (AWS/Azure)',
-      description: 'Master cloud platforms, services, and infrastructure management.',
-      icon: <CloudCog className="w-8 h-8" />,
-      duration: '12 Weeks',
-      level: 'Beginner to Intermediate',
-      students: '600+',
-      fee: '₹48,000',
-      features: ['AWS Services', 'Azure Fundamentals', 'Cloud Security', 'Serverless', 'Migration', 'Cost Optimization'],
-      popular: false,
-    },
-    {
-      id: 6,
-      title: 'Mobile App Development',
-      description: 'Build cross-platform mobile apps with React Native and Flutter.',
-      icon: <Cpu className="w-8 h-8" />,
-      duration: '15 Weeks',
-      level: 'Intermediate',
-      students: '500+',
-      fee: '₹42,000',
-      features: ['React Native', 'Flutter', 'Mobile UI/UX', 'APIs Integration', 'App Store Deployment', 'Performance'],
-      popular: false,
-    },
+    
   ];
 
   return (
