@@ -108,13 +108,13 @@ export default function ReactCoursePage() {
         
         <div className="section-padding relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
+            {/* <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
               <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
               <span>›</span>
               <Link href="/courses" className="hover:text-orange-600 transition-colors">Courses</Link>
               <span>›</span>
               <span className="text-orange-600 font-semibold">React Development</span>
-            </div>
+            </div> */}
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -131,7 +131,7 @@ export default function ReactCoursePage() {
                   Master modern frontend development with React and Next.js. Build fast, scalable, and beautiful applications that users love.
                 </p>
                 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                   <div className="bg-white border border-gray-100 rounded-xl p-4 text-center hover:shadow-lg transition-shadow">
                     <div className="text-2xl font-bold text-gray-900 mb-1">{courseDetails.duration}</div>
                     <div className="text-sm text-gray-600">Duration</div>
@@ -140,10 +140,7 @@ export default function ReactCoursePage() {
                     <div className="text-2xl font-bold text-gray-900 mb-1">{courseDetails.level}</div>
                     <div className="text-sm text-gray-600">Level</div>
                   </div>
-                  <div className="bg-white border border-gray-100 rounded-xl p-4 text-center hover:shadow-lg transition-shadow">
-                    <div className="text-2xl font-bold text-gray-900 mb-1">{courseDetails.students}</div>
-                    <div className="text-sm text-gray-600">Alumni</div>
-                  </div>
+                  
                   <div className="bg-white border border-gray-100 rounded-xl p-4 text-center hover:shadow-lg transition-shadow">
                     <div className="text-2xl font-bold text-gray-900 mb-1">{courseDetails.rating}/5</div>
                     <div className="text-sm text-gray-600">Rating</div>
@@ -152,19 +149,19 @@ export default function ReactCoursePage() {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
-                    href="/contact?course=React Development" 
+                    href="/contact" 
                     className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105"
                   >
                     Enroll Now
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="#curriculum" 
                     className="inline-flex items-center justify-center gap-3 bg-white border border-gray-200 text-gray-700 font-semibold px-8 py-4 rounded-xl hover:border-orange-300 hover:shadow-lg transition-all duration-300"
                   >
                     <BookOpen className="w-5 h-5" />
                     View Syllabus
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               
@@ -206,7 +203,7 @@ export default function ReactCoursePage() {
                   </div>
                   
                   <Link 
-                    href="/book-demo"
+                    href="/contact"
                     className="block text-center py-3 bg-gray-50 border border-gray-200 text-gray-700 font-semibold rounded-xl hover:border-orange-300 hover:bg-orange-50 transition-all duration-300"
                   >
                     Book Free Demo Class
@@ -469,7 +466,7 @@ export default function ReactCoursePage() {
               
               <div className="grid sm:grid-cols-2 gap-4">
                 <Link 
-                  href="/contact?course=React Development" 
+                  href="/contact" 
                   className="group bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-4 px-6 rounded-xl hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105"
                 >
                   <div className="flex items-center justify-center gap-2">
@@ -478,7 +475,7 @@ export default function ReactCoursePage() {
                   </div>
                 </Link>
                 <Link 
-                  href="/book-demo" 
+                  href="/contact" 
                   className="group bg-white border border-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-xl hover:border-orange-300 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex items-center justify-center gap-2">
@@ -497,7 +494,7 @@ export default function ReactCoursePage() {
       </section>
 
       {/* Related Courses */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="section-padding">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -571,7 +568,7 @@ export default function ReactCoursePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

@@ -43,7 +43,7 @@ const Footer = () => {
               expert mentorship, and hands-on learning experiences that launch careers.
             </p>
             
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a href="#" className="group w-12 h-12 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 transition-all duration-300 hover:border-orange-300">
                 <Facebook className="w-5 h-5 text-gray-600 group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
@@ -56,7 +56,7 @@ const Footer = () => {
               <a href="#" className="group w-12 h-12 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 transition-all duration-300 hover:border-orange-300">
                 <Instagram className="w-5 h-5 text-gray-600 group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -108,31 +108,24 @@ const Footer = () => {
               Get in Touch
             </h3>
             <div className="space-y-4 mb-6">
-              <div className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-orange-100 transition-colors">
-                  <MapPin className="w-4 h-4 text-orange-500" />
-                </div>
-                <span className="text-gray-600 group-hover:text-gray-900 transition-colors">
-                  Tech Park, Sector 62<br/>Noida, Uttar Pradesh 201309
-                </span>
-              </div>
+             
               <div className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-100 transition-colors">
                   <Phone className="w-4 h-4 text-orange-500" />
                 </div>
-                <span className="text-gray-600 group-hover:text-gray-900 transition-colors">+91 98765 43210</span>
+                <span className="text-gray-600 group-hover:text-gray-900 transition-colors">+91 96773 77316</span>
               </div>
               <div className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-100 transition-colors">
                   <Mail className="w-4 h-4 text-orange-500" />
                 </div>
-                <span className="text-gray-600 group-hover:text-gray-900 transition-colors">hello@viraacademy.com</span>
+                <span className="text-gray-600 group-hover:text-gray-900 transition-colors">viraacademy.info@gmail.com</span>
               </div>
             </div>
 
             <div className="mt-8">
               <Link 
-                href="/book-demo"
+                href="/contact-us"
                 className="inline-flex items-center justify-center gap-3 w-full bg-white border border-gray-300 text-gray-700 font-semibold py-3 rounded-xl hover:border-orange-500 hover:bg-orange-50 hover:text-orange-600 transition-all duration-300 group"
               >
                 <Calendar className="w-5 h-5 group-hover:text-orange-500" />

@@ -9,8 +9,8 @@ export default function PythonDjangoCoursePage() {
     duration: '10 Weeks',
     level: 'Beginner to Professional',
     students: '1,800+',
-    fee: '₹38,000',
-    originalFee: '₹48,000',
+    fee: '₹35,000',
+    originalFee: '₹40,000',
     nextBatch: 'March 20, 2024',
     seatsLeft: '8',
     rating: '4.9',
@@ -89,13 +89,13 @@ export default function PythonDjangoCoursePage() {
         
         <div className="section-padding relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
+            {/* <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
               <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
               <span>›</span>
               <Link href="/courses" className="hover:text-orange-600 transition-colors">Courses</Link>
               <span>›</span>
               <span className="text-orange-600 font-semibold">Python & Django</span>
-            </div>
+            </div> */}
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -112,7 +112,7 @@ export default function PythonDjangoCoursePage() {
                   Master backend development with Python's most powerful web framework. Build scalable, production-ready applications.
                 </p>
                 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                   <div className="bg-white border border-gray-100 rounded-xl p-4 text-center hover:shadow-lg transition-shadow">
                     <div className="text-2xl font-bold text-gray-900 mb-1">{courseDetails.duration}</div>
                     <div className="text-sm text-gray-600">Duration</div>
@@ -125,27 +125,24 @@ export default function PythonDjangoCoursePage() {
                     <div className="text-2xl font-bold text-gray-900 mb-1">{courseDetails.students}</div>
                     <div className="text-sm text-gray-600">Alumni</div>
                   </div>
-                  <div className="bg-white border border-gray-100 rounded-xl p-4 text-center hover:shadow-lg transition-shadow">
-                    <div className="text-2xl font-bold text-gray-900 mb-1">{courseDetails.rating}/5</div>
-                    <div className="text-sm text-gray-600">Rating</div>
-                  </div>
+                  
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
-                    href="/contact?course=Python Django" 
+                    href="/contact" 
                     className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105"
                   >
                     Enroll Now
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="#curriculum" 
                     className="inline-flex items-center justify-center gap-3 bg-white border border-gray-200 text-gray-700 font-semibold px-8 py-4 rounded-xl hover:border-orange-300 hover:shadow-lg transition-all duration-300"
                   >
                     <BookOpen className="w-5 h-5" />
                     View Syllabus
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               
@@ -420,7 +417,7 @@ export default function PythonDjangoCoursePage() {
               </div>
               
               <div className="mt-6 text-sm text-gray-500 text-center">
-                Only {courseDetails.seatsLeft} seats available • 7-day money-back guarantee
+                Only {courseDetails.seatsLeft} seats available 
               </div>
             </div>
           </div>

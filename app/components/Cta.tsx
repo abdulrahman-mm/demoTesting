@@ -147,7 +147,7 @@ const Cta = () => {
                       {
                         title: "Python Full Stack",
                         duration: "12 Weeks",
-                        price: "₹45,000",
+                        price: "₹35,000",
                         seats: 8,
                         badge: "Most Popular",
                       },
@@ -264,10 +264,10 @@ const Cta = () => {
                       <p>
                         <span className="font-medium">Need help choosing?</span>{" "}
                         <a
-                          href="tel:+919876543210"
+                          href="tel:+919677377316"
                           className="underline hover:text-white"
                         >
-                          Call Vira Counselor: +91 98765 43210
+                          Call Vira Counselor: +91 96773 77316
                         </a>
                       </p>
                     </div>

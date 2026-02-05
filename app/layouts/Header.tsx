@@ -767,9 +767,9 @@ const Header = () => {
       href: '/courses',
       icon: <BookOpen className="w-4 h-4" />,
       dropdown: [
-        { label: 'Python & Django', href: '/courses/python-django', badge: 'Popular', icon: '🐍' },
-        { label: 'DevOps ', href: '/courses/devops', badge: 'High Demand', icon: '⚡' },
-        { label: 'React Development', href: '/courses/react', badge: 'Trending', icon: '⚛️' },
+        { label: 'Python & Django', href: '/courses/python', badge: 'Popular',},
+        { label: 'DevOps ', href: '/courses/devops', badge: 'High Demand'},
+        { label: 'React Development', href: '/courses/react', badge: 'Trending'},
       ]
     },
     { label: 'About', href: '/about', icon: <Users className="w-4 h-4" /> },
@@ -864,7 +864,6 @@ const Header = () => {
                                 onClick={() => setIsCoursesOpen(false)}
                               >
                                 <div className="flex items-center gap-2 lg:gap-3">
-                                  {dropdownItem.icon && <span className="text-base lg:text-lg">{dropdownItem.icon}</span>}
                                   <div>
                                     <div className="text-sm lg:text-base font-medium text-gray-800 group-hover:text-[#FF7A1E]">
                                       {dropdownItem.label}
@@ -1052,7 +1051,6 @@ const Header = () => {
                                   }}
                                 >
                                   <div className="flex items-center gap-3">
-                                    {dropdownItem.icon && <span className="text-base">{dropdownItem.icon}</span>}
                                     <span>{dropdownItem.label}</span>
                                   </div>
                                   {dropdownItem.badge && (

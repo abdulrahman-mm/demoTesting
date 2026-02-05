@@ -243,14 +243,14 @@ export default function FAQPage() {
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a 
-                      href="mailto:support@viraacademy.com"
+                      href="mailto:viraacademy.info@gmail.com"
                       className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300"
                     >
                       <Mail className="w-5 h-5" />
                       Email Support
                     </a>
                     <a 
-                      href="tel:+919876543210"
+                      href="tel:+919677377316"
                       className="inline-flex items-center justify-center gap-3 bg-white border border-gray-200 text-gray-700 font-semibold px-8 py-4 rounded-xl hover:border-orange-300 hover:shadow-lg transition-all duration-300"
                     >
                       <Phone className="w-5 h-5" />

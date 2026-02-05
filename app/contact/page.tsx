@@ -83,7 +83,7 @@ export default function ContactPage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone Support",
-      details: ["+91 98765 43210", "+91 12345 67890"],
+      details: ["+91 96773 77316"],
       subtitle: "Available 9 AM - 7 PM",
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-gradient-to-br from-blue-50 to-blue-100/50",
@@ -91,7 +91,7 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["hello@viraacademy.com", "admissions@viraacademy.com"],
+      details: ["viraacademy.info@gmail.com"],
       subtitle: "Response within 24 hours",
       color: "from-orange-500 to-orange-600",
       bgColor: "bg-gradient-to-br from-orange-50 to-orange-100/50",
@@ -100,7 +100,7 @@ export default function ContactPage() {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Office Hours",
-      details: ["Mon-Fri: 9 AM - 7 PM", "Sat: 10 AM - 4 PM"],
+      details: ["Mon-Fri: 9 AM - 7 PM"],
       subtitle: "Sunday: Closed",
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-gradient-to-br from-purple-50 to-purple-100/50",
@@ -108,30 +108,25 @@ export default function ContactPage() {
   ];
 
   const faqs = [
-    {
-      question: "What are the prerequisites for your courses?",
-      answer:
-        "Most courses require basic computer knowledge. For advanced courses, we recommend some programming experience. Check individual course pages for specific prerequisites.",
-      category: "Admissions",
+     { 
+      question: 'What is Vira Academy?', 
+      answer: 'Vira Academy is an online software training platform that provides career-focused courses designed to help students build practical technical skills and prepare for the global job market.',
+      category: 'general'
     },
-    
-    {
-      question: "Can I pay in installments?",
-      answer:
-        "Yes, we offer flexible payment options including EMI, installment plans, and scholarships for deserving candidates. Contact our admissions team for details.",
-      category: "Payment",
+    { 
+      question: 'Are the courses online or offline?', 
+      answer: 'All courses at Vira Academy are fully online. Students can learn from anywhere in the world through live sessions and structured digital learning materials.',
+      category: 'courses'
     },
-    {
-      question: "Are your certificates recognized?",
-      answer:
-        "Our certificates are industry-recognized and accepted by top companies worldwide. Many of our alumni work at FAANG companies and top startups.",
-      category: "Certification",
+    { 
+      question: 'Who can enroll in your courses?', 
+      answer: 'Anyone interested in learning software skills can enroll, including students, fresh graduates, working professionals, and career changers.',
+      category: 'enrollment'
     },
-    {
-      question: "Do you offer online classes?",
-      answer:
-        "We offer both online live classes and in-person sessions with flexible schedules to accommodate working professionals and students.",
-      category: "Learning",
+    { 
+      question: 'Do you provide placement guarantees?', 
+      answer: 'We do not guarantee job placements. However, we provide career assistance such as resume building, portfolio guidance, and mock interview preparation.',
+      category: 'career'
     },
   ];
 
@@ -225,7 +220,7 @@ export default function ContactPage() {
                       Thank you for contacting Vira Academy. Our admissions team
                       will reach out to you within 24 hours.
                     </p>
-                    <div className="flex gap-4 justify-center">
+                    {/* <div className="flex gap-4 justify-center">
                       <Link
                         href="/courses"
                         className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all"
@@ -233,7 +228,7 @@ export default function ContactPage() {
                         Browse Courses
                         <ChevronRight className="w-5 h-5" />
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 ) : (
                   <>
@@ -442,7 +437,7 @@ export default function ContactPage() {
                 </p>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900 mb-2">
-                    +91 98765 43210
+                  +91 96773 77316
                   </div>
                   <p className="text-sm text-gray-500">
                     Available 9 AM - 7 PM, Monday to Saturday
@@ -488,9 +483,7 @@ export default function ContactPage() {
                       <HelpCircle className="w-5 h-5 text-orange-500" />
                     </div>
                     <div>
-                      <div className="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full mb-3">
-                        {faq.category}
-                      </div>
+                      
                       <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
                         {faq.question}
                       </h3>
@@ -549,13 +542,7 @@ export default function ContactPage() {
                 Talk to Admissions
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="/courses"
-                className="inline-flex items-center justify-center gap-3 bg-white border border-gray-200 text-gray-700 font-semibold px-10 py-5 rounded-2xl hover:border-orange-300 hover:shadow-lg transition-all duration-300"
-              >
-                Explore Programs
-                <ChevronRight className="w-5 h-5" />
-              </Link>
+             
             </div>
           </div>
         </div>

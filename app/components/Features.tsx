@@ -366,10 +366,10 @@ const Features = () => {
                 <div className="text-center text-sm text-orange-100 pt-2">
                   <span className="font-medium">Need guidance?</span>{" "}
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919677377316"
                     className="underline hover:text-white"
                   >
-                    Call Vira Counselor: +91 98765 43210
+                    Call Vira Counselor: +91 96773 77316
                   </a>
                 </div>
               </div>
