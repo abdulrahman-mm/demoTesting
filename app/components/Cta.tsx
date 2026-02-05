@@ -1,24 +1,33 @@
-'use client';
+"use client";
 
-import { ArrowRight, Sparkles, Zap, Clock, Users, Brain, ChevronRight, ShieldCheck } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import {
+  ArrowRight,
+  Sparkles,
+  Zap,
+  Clock,
+  Users,
+  Brain,
+  ChevronRight,
+  ShieldCheck,
+} from "lucide-react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const Cta = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 15,
     hours: 23,
     minutes: 59,
-    seconds: 59
+    seconds: 59,
   });
 
   const [seatsLeft, setSeatsLeft] = useState(24);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
+      setTimeLeft((prev) => {
         const { days, hours, minutes, seconds } = prev;
-        
+
         if (seconds > 0) {
           return { ...prev, seconds: seconds - 1 };
         } else if (minutes > 0) {
@@ -35,17 +44,13 @@ const Cta = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const stats = [
-    { icon: <Users className="w-5 h-5" />, value: '5,000+', label: 'Career Transformations' },
-    { icon: <Sparkles className="w-5 h-5" />, value: '98%', label: 'Placement Success' },
-    { icon: <Zap className="w-5 h-5" />, value: '2.5x', label: 'Avg Salary Hike' },
-  ];
+ 
 
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#FF7A1E]/5 via-white to-[#FF9A3E]/5"></div>
-      
+
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br from-[#FF7A1E]/10 to-transparent rounded-full blur-3xl"></div>
@@ -55,10 +60,13 @@ const Cta = () => {
 
       {/* Animated Dots Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #FF7A1E 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #FF7A1E 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
       </div>
 
       <div className="section-padding relative z-10">
@@ -69,12 +77,14 @@ const Cta = () => {
               <div className="text-center mb-10">
                 <div className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-50 to-orange-100 backdrop-blur-sm px-6 py-3 rounded-2xl border border-orange-200/50 mb-8">
                   <Brain className="w-5 h-5 text-[#FF7A1E]" />
-                  <span className="text-sm font-semibold text-gray-900">Limited Time Opportunity</span>
+                  <span className="text-sm font-semibold text-gray-900">
+                    Limited Time Opportunity
+                  </span>
                   <span className="px-2 py-1 bg-[#FF7A1E] text-white text-xs font-bold rounded-full">
                     20% Scholarship
                   </span>
                 </div>
-                
+
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                   <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                     Start Your Tech Journey
@@ -84,42 +94,38 @@ const Cta = () => {
                     At Vira Academy
                   </span>
                 </h2>
-                
+
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
-                  Join thousands of successful graduates who transformed their careers with 
-                  industry-focused training, hands-on projects, and guaranteed placement support.
+                  Join thousands of successful graduates who transformed their
+                  careers with industry-focused training, hands-on projects, and
+                  guaranteed placement support.
                 </p>
               </div>
 
-              {/* Stats Bar */}
-              <div className="grid grid-cols-3 gap-6 mb-12">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50">
-                    <div className="flex justify-center text-[#FF7A1E] mb-3">
-                      {stat.icon}
-                    </div>
-                    <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+              
 
               {/* Countdown Timer */}
               <div className="bg-gradient-to-r from-gray-50 to-gray-100/50 rounded-2xl p-8 mb-12 border border-gray-200/50">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">Next Batch Starts In</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      Next Batch Starts In
+                    </h3>
                     <div className="flex items-center gap-2 text-gray-600">
                       <Clock className="w-5 h-5" />
-                      <span>Limited seats available. Enroll before timer runs out!</span>
+                      <span>
+                        Limited seats available. Enroll before timer runs out!
+                      </span>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     {Object.entries(timeLeft).map(([unit, value]) => (
                       <div key={unit} className="text-center">
                         <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#FF7A1E] to-[#FF9A3E] flex flex-col items-center justify-center text-white">
-                          <div className="text-2xl font-bold">{value.toString().padStart(2, '0')}</div>
+                          <div className="text-2xl font-bold">
+                            {value.toString().padStart(2, "0")}
+                          </div>
                           <div className="text-xs uppercase">{unit}</div>
                         </div>
                       </div>
@@ -132,15 +138,38 @@ const Cta = () => {
               <div className="grid lg:grid-cols-2 gap-8">
                 {/* Course Options */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Select Your Program</h3>
-                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                    Select Your Program
+                  </h3>
+
                   <div className="space-y-4">
                     {[
-                      { title: 'Python Full Stack', duration: '12 Weeks', price: '₹45,000', seats: 8, badge: 'Most Popular' },
-                      { title: 'DevOps Engineering', duration: '16 Weeks', price: '₹55,000', seats: 6, badge: 'High Demand' },
-                      { title: 'React Development', duration: '10 Weeks', price: '₹35,000', seats: 10, badge: 'Trending' },
+                      {
+                        title: "Python Full Stack",
+                        duration: "12 Weeks",
+                        price: "₹45,000",
+                        seats: 8,
+                        badge: "Most Popular",
+                      },
+                      {
+                        title: "DevOps Engineering",
+                        duration: "16 Weeks",
+                        price: "₹55,000",
+                        seats: 6,
+                        badge: "High Demand",
+                      },
+                      {
+                        title: "React Development",
+                        duration: "10 Weeks",
+                        price: "₹35,000",
+                        seats: 10,
+                        badge: "Trending",
+                      },
                     ].map((course, index) => (
-                      <div key={index} className="group flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:border-[#FF7A1E] transition-colors">
+                      <div
+                        key={index}
+                        className="group flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:border-[#FF7A1E] transition-colors"
+                      >
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
                             <div className="text-[#FF7A1E]">
@@ -151,7 +180,9 @@ const Cta = () => {
                           </div>
                           <div>
                             <div className="flex items-center gap-2">
-                              <h4 className="font-bold text-gray-900">{course.title}</h4>
+                              <h4 className="font-bold text-gray-900">
+                                {course.title}
+                              </h4>
                               <span className="px-2 py-1 bg-orange-100 text-[#FF7A1E] text-xs font-bold rounded-full">
                                 {course.badge}
                               </span>
@@ -164,9 +195,14 @@ const Cta = () => {
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-gray-900">{course.price}</div>
+                          <div className="text-2xl font-bold text-gray-900">
+                            {course.price}
+                          </div>
                           <div className="text-sm text-gray-600 line-through opacity-0 group-hover:opacity-100 transition-opacity">
-                            ₹{parseInt(course.price.replace('₹', '').replace(',', '')) * 1.25} 
+                            ₹
+                            {parseInt(
+                              course.price.replace("₹", "").replace(",", ""),
+                            ) * 1.25}
                           </div>
                         </div>
                       </div>
@@ -177,15 +213,17 @@ const Cta = () => {
                 {/* CTA Section */}
                 <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 text-white">
                   <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-4">Enrollment Benefits</h3>
+                    <h3 className="text-2xl font-bold mb-4">
+                      Enrollment Benefits
+                    </h3>
                     <div className="space-y-3">
                       {[
-                        '20% Scholarship on early enrollment',
-                        'Free career consultation session',
-                        'Lifetime access to course updates',
-                        '1:1 mentorship with industry experts',
-                        '100% placement assistance',
-                        'Industry-recognized certification'
+                        "20% Scholarship on early enrollment",
+                        "Free career consultation session",
+                        "Lifetime access to course updates",
+                        "1:1 mentorship with industry experts",
+                        "100% placement assistance",
+                        "Industry-recognized certification",
                       ].map((benefit, index) => (
                         <div key={index} className="flex items-center gap-3">
                           <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -205,7 +243,7 @@ const Cta = () => {
                       <span>Enroll Now - Get 20% Off</span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    
+
                     <Link
                       href="/contact"
                       className="flex items-center justify-center gap-3 w-full py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-colors"
@@ -216,12 +254,19 @@ const Cta = () => {
 
                     <div className="text-center text-sm text-gray-300 pt-4">
                       <p className="mb-2">
-                        <span className="font-medium">Limited seats available:</span>{' '}
-                        <span className="font-bold text-white">{seatsLeft}/50 seats left</span>
+                        <span className="font-medium">
+                          Limited seats available:
+                        </span>{" "}
+                        <span className="font-bold text-white">
+                          {seatsLeft}/50 seats left
+                        </span>
                       </p>
                       <p>
-                        <span className="font-medium">Need help choosing?</span>{' '}
-                        <a href="tel:+919876543210" className="underline hover:text-white">
+                        <span className="font-medium">Need help choosing?</span>{" "}
+                        <a
+                          href="tel:+919876543210"
+                          className="underline hover:text-white"
+                        >
                           Call Vira Counselor: +91 98765 43210
                         </a>
                       </p>
@@ -239,21 +284,23 @@ const Cta = () => {
                     <ShieldCheck className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">100% Placement Support</div>
-                    <div className="text-sm text-gray-600">Get job-ready with our comprehensive career services</div>
+                    
+                    <div className="text-sm text-gray-600">
+                      Get job-ready with our comprehensive career services
+                    </div>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a 
-                    href="/courses" 
+                  <a
+                    href="/courses"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#FF7A1E] text-[#FF7A1E] font-semibold rounded-xl hover:bg-orange-50 transition-colors"
                   >
                     Explore All Programs
                     <ChevronRight className="w-4 h-4" />
                   </a>
-                  <a 
-                    href="/contact" 
+                  <a
+                    href="/contact"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors"
                   >
                     Contact Admissions
@@ -273,13 +320,18 @@ const Cta = () => {
               </div>
             </div>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
-              {['Google', 'Amazon', 'Microsoft', 'TCS', 'Infosys', 'Wipro'].map((company, idx) => (
-                <div key={idx} className="h-16 flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:border-[#FF7A1E] transition-colors group">
-                  <div className="text-lg font-bold text-gray-700 group-hover:text-[#FF7A1E] transition-colors">
-                    {company}
+              {["Google", "Amazon", "Microsoft", "TCS", "Infosys", "Wipro"].map(
+                (company, idx) => (
+                  <div
+                    key={idx}
+                    className="h-16 flex items-center justify-center bg-white border border-gray-200 rounded-xl hover:border-[#FF7A1E] transition-colors group"
+                  >
+                    <div className="text-lg font-bold text-gray-700 group-hover:text-[#FF7A1E] transition-colors">
+                      {company}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ),
+              )}
             </div>
           </div>
         </div>

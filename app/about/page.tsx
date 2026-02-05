@@ -1,5 +1,6 @@
 import { Users, Target, Award, Globe, Sparkles, TrendingUp, CheckCircle, ArrowRight, ChevronRight, Zap, Rocket } from 'lucide-react';
 import Link from 'next/link';
+import Testimonials from '../components/Testimonials';
 
 export default function AboutPage() {
   const values = [
@@ -39,7 +40,6 @@ export default function AboutPage() {
 
   const stats = [
     { value: '5000+', label: 'Students Trained', icon: <TrendingUp className="w-5 h-5" />, change: '+42% YoY' },
-    { value: '98%', label: 'Placement Rate', icon: <CheckCircle className="w-5 h-5" />, change: 'Industry leading' },
     { value: '1200+', label: 'Projects', icon: <Sparkles className="w-5 h-5" />, change: 'Real-world impact' },
     { value: '50+', label: 'Expert Trainers', icon: <Users className="w-5 h-5" />, change: 'Industry veterans' }
   ];
@@ -167,15 +167,7 @@ export default function AboutPage() {
                   not just for jobs, but for impactful careers in technology.
                 </p>
               </div>
-              <div className="mt-8">
-                <Link 
-                  href="/story" 
-                  className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all"
-                >
-                  Read our full story
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </div>
+             
             </div>
             
             <div className="relative">
@@ -244,61 +236,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+<Testimonials/>
       
 
-      {/* Leadership */}
-      <section className="py-24 bg-white">
-        <div className="section-padding">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-200 rounded-full px-4 py-2 mb-4">
-                <span className="text-sm font-semibold text-orange-600">Leadership</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gray-900">
-                Meet Our <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-                  Team
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Industry veterans leading the revolution in tech education
-              </p>
-            </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {leadership.map((person, index) => (
-                <div 
-                  key={index} 
-                  className="group relative bg-white border border-gray-100 rounded-2xl p-8 hover:border-orange-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="absolute -top-4 left-8">
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-orange-500/30">
-                      {person.initials}
-                    </div>
-                  </div>
-                  <div className="pt-12">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{person.name}</h3>
-                    <p className="text-orange-600 font-semibold mb-4">{person.role}</p>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{person.bio}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {person.expertise.map((skill, i) => (
-                        <span key={i} className="px-3 py-1 bg-orange-50 text-orange-600 text-sm font-medium rounded-full">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="mt-6 pt-6 border-t border-gray-100">
-                      <div className="flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 transition-colors cursor-pointer">
-                        <span>View profile</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="relative py-24 overflow-hidden">

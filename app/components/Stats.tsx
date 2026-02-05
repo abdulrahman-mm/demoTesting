@@ -1,107 +1,22 @@
-// 'use client';
+"use client";
 
-// import { Users, Award, Briefcase, Star, Target, Globe } from 'lucide-react';
-// import { useState, useEffect } from 'react';
-
-// const Stats = () => {
-//   const [counts, setCounts] = useState({
-//     students: 0,
-//     placement: 0,
-//     projects: 0,
-//     mentors: 0,
-//   });
-
-//   const stats = [
-//     { icon: <Users className="w-8 h-8" />, value: '5000+', label: 'Students Trained', color: 'text-primary' },
-//     { icon: <Briefcase className="w-8 h-8" />, value: '98%', label: 'Placement Rate', color: 'text-secondary' },
-//     { icon: <Award className="w-8 h-8" />, value: '1200+', label: 'Projects Completed', color: 'text-accent' },
-//     { icon: <Star className="w-8 h-8" />, value: '50+', label: 'Expert Mentors', color: 'text-primary' },
-//   ];
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCounts(prev => ({
-//         students: Math.min(prev.students + 100, 5000),
-//         placement: Math.min(prev.placement + 2, 98),
-//         projects: Math.min(prev.projects + 50, 1200),
-//         mentors: Math.min(prev.mentors + 2, 50),
-//       }));
-//     }, 50);
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <section className="py-16 md:py-24 gradient-bg">
-//       <div className="section-padding">
-//         <div className="grid md:grid-cols-2 gap-12 items-center">
-//           <div>
-//             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-//               Why Choose{' '}
-//               <span className="text-gradient">CodeMasters</span>
-//             </h2>
-//             <p className="text-lg text-gray-600 mb-8">
-//               We're committed to transforming careers through practical, industry-focused education. 
-//               Our proven methodology ensures you gain the skills employers actually need.
-//             </p>
-            
-//             <div className="space-y-6">
-//               <div className="flex items-start gap-4">
-//                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-//                   <Target className="w-6 h-6 text-primary" />
-//                 </div>
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Industry-Ready Curriculum</h4>
-//                   <p className="text-gray-600">Courses designed with input from tech industry leaders</p>
-//                 </div>
-//               </div>
-              
-//               <div className="flex items-start gap-4">
-//                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-//                   <Globe className="w-6 h-6 text-primary" />
-//                 </div>
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Global Certification</h4>
-//                   <p className="text-gray-600">Recognized certifications that boost your resume</p>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           <div>
-//             <div className="grid grid-cols-2 gap-6">
-//               {stats.map((stat, index) => (
-//                 <div
-//                   key={index}
-//                   className="bg-white p-6 rounded-2xl border border-orange-100 shadow-lg hover:shadow-xl transition-shadow"
-//                 >
-//                   <div className={`${stat.color} mb-4`}>
-//                     {stat.icon}
-//                   </div>
-//                   <div className="text-3xl md:text-4xl font-bold mb-2">
-//                     {stat.value}
-//                   </div>
-//                   <div className="text-gray-600 font-medium">
-//                     {stat.label}
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Stats;
-
-'use client';
-
-import { Users, Award, Briefcase, Star, Target, Globe, Zap, TrendingUp, Brain, Rocket, CheckCircle, ArrowUpRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import CountUp from 'react-countup';
-import { useInView } from 'react-intersection-observer';
+import {
+  Users,
+  Award,
+  Briefcase,
+  Star,
+  Target,
+  Globe,
+  Zap,
+  TrendingUp,
+  Brain,
+  Rocket,
+  CheckCircle,
+  ArrowUpRight,
+} from "lucide-react";
+import { useState, useEffect } from "react";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 interface StatItem {
   id: number;
@@ -140,72 +55,58 @@ const Stats = () => {
       id: 1,
       icon: <Users className="w-7 h-7" />,
       value: 5000,
-      suffix: '+',
-      label: 'Career Transformations',
-      description: 'Students trained & placed',
-      color: 'text-blue-600',
-      gradient: 'from-blue-500 to-cyan-500',
+      suffix: "+",
+      label: "Career Transformations",
+      description: "Students trained & placed",
+      color: "text-blue-600",
+      gradient: "from-blue-500 to-cyan-500",
     },
+   
     {
       id: 2,
-      icon: <Briefcase className="w-7 h-7" />,
-      value: 98,
-      suffix: '%',
-      label: 'Placement Success',
-      description: 'Average placement rate',
-      color: 'text-green-600',
-      gradient: 'from-green-500 to-emerald-500',
+      icon: <Award className="w-7 h-7" />,
+      value: 1200,
+      suffix: "+",
+      label: "Projects Completed",
+      description: "Real-world applications built",
+      color: "text-orange-600",
+      gradient: "from-orange-500 to-amber-500",
     },
     {
       id: 3,
-      icon: <Award className="w-7 h-7" />,
-      value: 1200,
-      suffix: '+',
-      label: 'Projects Completed',
-      description: 'Real-world applications built',
-      color: 'text-orange-600',
-      gradient: 'from-orange-500 to-amber-500',
-    },
-    {
-      id: 4,
       icon: <Star className="w-7 h-7" />,
       value: 50,
-      suffix: '+',
-      label: 'Industry Mentors',
-      description: 'Expert trainers',
-      color: 'text-purple-600',
-      gradient: 'from-purple-500 to-pink-500',
+      suffix: "+",
+      label: "Industry Mentors",
+      description: "Expert trainers",
+      color: "text-purple-600",
+      gradient: "from-purple-500 to-pink-500",
     },
   ];
 
   const features: FeatureItem[] = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: 'Industry-Focused Curriculum',
-      description: 'Designed with input from tech leaders at Google, Amazon & Microsoft',
-      color: 'text-[#FF7A1E]',
-      bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100',
+      title: "Industry-Focused Curriculum",
+      description:
+        "Designed with input from tech leaders at Google, Amazon & Microsoft",
+      color: "text-[#FF7A1E]",
+      bgColor: "bg-gradient-to-br from-orange-50 to-orange-100",
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      title: 'Hands-on Learning',
-      description: 'Build 10+ real projects with code reviews and feedback',
-      color: 'text-blue-600',
-      bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100',
+      title: "Hands-on Learning",
+      description: "Build 10+ real projects with code reviews and feedback",
+      color: "text-blue-600",
+      bgColor: "bg-gradient-to-br from-blue-50 to-blue-100",
     },
-    {
-      icon: <Rocket className="w-6 h-6" />,
-      title: 'Career Acceleration',
-      description: 'Get interview preparation and placement support',
-      color: 'text-green-600',
-      bgColor: 'bg-gradient-to-br from-green-50 to-green-100',
-    },
+    
     {
       icon: <Globe className="w-6 h-6" />,
-      title: 'Global Recognition',
-      description: 'Vira Academy certifications valued worldwide',
-      color: 'text-purple-600',
-      bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100',
+      title: "Global Recognition",
+      description: "Vira Academy certifications valued worldwide",
+      color: "text-purple-600",
+      bgColor: "bg-gradient-to-br from-purple-50 to-purple-100",
     },
   ];
 
@@ -213,7 +114,7 @@ const Stats = () => {
     <section ref={ref} className="relative py-24 md:py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-orange-50/30"></div>
-      
+
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-200/40 to-transparent rounded-full blur-3xl"></div>
@@ -223,11 +124,14 @@ const Stats = () => {
 
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, #FF7A1E 1px, transparent 1px),
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(to right, #FF7A1E 1px, transparent 1px),
                            linear-gradient(to bottom, #FF7A1E 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }}></div>
+            backgroundSize: "60px 60px",
+          }}
+        ></div>
       </div>
 
       <div className="section-padding relative z-10">
@@ -235,21 +139,24 @@ const Stats = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-50 to-orange-100 backdrop-blur-sm px-6 py-3 rounded-2xl border border-orange-200/50 mb-6">
             <TrendingUp className="w-5 h-5 text-[#FF7A1E]" />
-            <span className="text-sm font-semibold text-gray-900">Vira Academy Excellence</span>
+            <span className="text-sm font-semibold text-gray-900">
+              Vira Academy Excellence
+            </span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               Why Choose
-            </span>{' '}
+            </span>{" "}
             <span className="bg-gradient-to-r from-[#FF7A1E] to-[#FF9A3E] bg-clip-text text-transparent">
               Vira Academy
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Join India's most trusted tech training academy with a proven track record 
-            of transforming careers through industry-focused education and hands-on learning.
+            Join India's most trusted tech training academy with a proven track
+            record of transforming careers through industry-focused education
+            and hands-on learning.
           </p>
         </div>
 
@@ -259,14 +166,14 @@ const Stats = () => {
           <div className="space-y-8">
             <div className="space-y-8">
               {features.map((feature, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="group flex items-start gap-6 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 hover:border-[#FF7A1E]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className={`w-14 h-14 rounded-xl ${feature.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                    <div className={feature.color}>
-                      {feature.icon}
-                    </div>
+                  <div
+                    className={`w-14 h-14 rounded-xl ${feature.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}
+                  >
+                    <div className={feature.color}>{feature.icon}</div>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#FF7A1E] transition-colors">
@@ -290,8 +197,8 @@ const Stats = () => {
                 <div>
                   <h4 className="text-lg font-bold mb-2">Success Guarantee</h4>
                   <p className="text-gray-300">
-                    98% of our graduates land jobs within 3 months of course completion, 
-                    with an average salary hike of 150%.
+                    98% of our graduates land jobs within 3 months of course
+                    completion, with an average salary hike of 150%.
                   </p>
                 </div>
               </div>
@@ -308,14 +215,14 @@ const Stats = () => {
                 >
                   {/* Gradient Border Effect */}
                   <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#FF7A1E]/20 transition-colors duration-500 pointer-events-none"></div>
-                  
+
                   {/* Icon with Gradient Background */}
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                    <div className="text-white">
-                      {stat.icon}
-                    </div>
+                  <div
+                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                  >
+                    <div className="text-white">{stat.icon}</div>
                   </div>
-                  
+
                   {/* Animated Counter */}
                   <div className="mb-2">
                     <div className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -325,29 +232,29 @@ const Stats = () => {
                           end={stat.value}
                           duration={2.5}
                           separator=","
-                          suffix={stat.suffix || ''}
+                          suffix={stat.suffix || ""}
                           className={stat.color}
                         />
                       ) : (
-                        <span className={stat.color}>0{stat.suffix || ''}</span>
+                        <span className={stat.color}>0{stat.suffix || ""}</span>
                       )}
                     </div>
                     <div className="text-sm text-gray-500 mt-1">
                       {stat.description}
                     </div>
                   </div>
-                  
+
                   {/* Label */}
                   <div className="text-lg font-semibold text-gray-900">
                     {stat.label}
                   </div>
-                  
+
                   {/* Progress Bar */}
                   <div className="mt-4">
                     <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className={`h-full bg-gradient-to-r ${stat.gradient} transition-all duration-1000 ease-out ${
-                          countStarted ? 'w-full' : 'w-0'
+                          countStarted ? "w-full" : "w-0"
                         }`}
                       ></div>
                     </div>
@@ -358,17 +265,18 @@ const Stats = () => {
 
             {/* Trust Badges */}
             <div className="mt-8 grid grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-                <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-900">ISO Certified</div>
-              </div>
+              
               <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
                 <Award className="w-8 h-8 text-[#FF7A1E] mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-900">5-Star Rating</div>
+                <div className="text-sm font-medium text-gray-900">
+                  5-Star Rating
+                </div>
               </div>
               <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
                 <Globe className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-900">Global Alumni</div>
+                <div className="text-sm font-medium text-gray-900">
+                  Global Alumni
+                </div>
               </div>
             </div>
           </div>
@@ -383,7 +291,8 @@ const Stats = () => {
                   Ready to Transform Your Career?
                 </h3>
                 <p className="text-orange-100 mb-6">
-                  Join the next batch starting March 15, 2026. Limited seats available.
+                  Join the next batch starting March 15, 2026. Limited seats
+                  available.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
@@ -397,14 +306,14 @@ const Stats = () => {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="px-6 py-3.5 bg-white text-[#FF7A1E] font-semibold rounded-xl text-center hover:bg-orange-50 transition-colors"
                 >
                   Apply Now
                 </a>
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="px-6 py-3.5 bg-transparent border-2 border-white text-white font-semibold rounded-xl text-center hover:bg-white/10 transition-colors"
                 >
                   Free Demo Class
